@@ -1,0 +1,8 @@
+node_modules
+.git
+*.log
+_check.mjs
+Dockerfile
+fly.toml
+README.md
+run-server.bat

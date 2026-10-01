@@ -1,0 +1,27 @@
+# Fly.io 部署配置：https://fly.io/docs/reference/configuration/
+app = "lalagay-game"
+primary_region = "hkg"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "3000"
+
+# 最小规格：共享 CPU + 256MB 内存，足够本游戏
+[vm]
+  size = "shared-cpu-1x"
+  memory = "256mb"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  # 无人访问时自动停机（不计费），有访问时秒级自动唤醒
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 250
+    soft_limit = 200

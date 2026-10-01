@@ -1,0 +1,16 @@
+{
+  "name": "game-lobby",
+  "version": "1.0.0",
+  "private": true,
+  "description": "多人在线网页游戏大厅（三国杀/Uno/大富翁/麻将/文字麻将/斗地主/掼蛋）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
